@@ -9,6 +9,11 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     HomeBloc homeBloc = HomeBloc();
 
+    remove(HomeModel homeModel) {
+      homeBloc.salvarModel(homeModel);
+      homeBloc.remove();
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Home"),
@@ -32,6 +37,10 @@ class HomeScreen extends StatelessWidget {
                   title: Text(homeModel.nome),
                   subtitle: Text(
                     homeModel.toString(),
+                  ),
+                  trailing: IconButton(
+                    onPressed: () => remove(homeModel),
+                    icon: const Icon(Icons.delete_forever_rounded),
                   ),
                 );
               },

@@ -10,7 +10,7 @@ class HomeDao {
   static const _ativo = 'ativo';
 
   static const String tableSql = 'CREATE TABLE $_tableName ('
-      '$_id INTEGER PRIMARY KEY, '
+      '$_id INTEGER PRIMARY KEY AUTOINCREMENT, '
       '$_nome TEXT, '
       '$_valor REAL, '
       '$_ativo INTEGER )';
